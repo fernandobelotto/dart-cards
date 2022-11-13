@@ -39,11 +39,17 @@ class Deck {
     }
   }
 
-  void shuffle() {}
+  void shuffle() {
+    cards.shuffle();
+  }
 
-  void removeCard(Card card) {}
+  void removeCard(Card card) {
+    cards.remove(card);
+  }
 
-  void cardsWithSuit(String suit) {}
+  List<Card> cardsWithSuit(String suit) {
+    return cards.where((element) => element.suit == suit).toList();
+  }
 
   List<Card> deal(int number) {
     return cards.sublist(1, number);
