@@ -52,7 +52,9 @@ class Deck {
   }
 
   List<Card> deal(int number) {
-    return cards.sublist(1, number);
+    var cardsDeal = cards.sublist(0, number);
+    cards = cards.sublist(number);
+    return cardsDeal;
   }
 
   List<Card> generateCards() {
